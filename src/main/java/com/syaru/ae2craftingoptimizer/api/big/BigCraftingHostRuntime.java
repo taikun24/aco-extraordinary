@@ -3,7 +3,7 @@ package com.syaru.ae2craftingoptimizer.api.big;
 import com.syaru.ae2craftingoptimizer.engine.BigCountMath;
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingJob;
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingKeyCodec;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;

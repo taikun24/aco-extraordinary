@@ -14,7 +14,7 @@ import com.syaru.ae2craftingoptimizer.config.ACOConfig;
 import com.syaru.ae2craftingoptimizer.engine.BigIntegerCraftingPlan;
 import com.syaru.ae2craftingoptimizer.engine.ExactCraftingJobLedger;
 import com.syaru.ae2craftingoptimizer.engine.ExactCraftingJobState;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;

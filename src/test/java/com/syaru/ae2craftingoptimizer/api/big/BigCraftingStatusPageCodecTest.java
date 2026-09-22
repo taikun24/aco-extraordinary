@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingJob;
 import io.netty.buffer.Unpooled;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.List;
 import java.util.UUID;
 import net.minecraft.core.RegistryAccess;

@@ -4,7 +4,7 @@ import appeng.api.crafting.IPatternDetails;
 import appeng.api.stacks.GenericStack;
 import appeng.api.stacks.KeyCounter;
 import com.syaru.ae2craftingoptimizer.optimization.ProviderPatternGenerationTracker;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Map;
 import java.util.Objects;
 

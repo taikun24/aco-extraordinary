@@ -3,7 +3,7 @@ package com.syaru.ae2craftingoptimizer.api.big;
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingJob;
 import com.syaru.ae2craftingoptimizer.engine.BigCountMath;
 import com.syaru.ae2craftingoptimizer.engine.BigIntegerBufferCodec;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -11,7 +11,13 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 
 /** Strict status-page packet codec with protocol, entry, magnitude, and byte bounds. */
 public final class BigCraftingStatusPageCodec<K> {
-    public static final int PROTOCOL_VERSION = 1;
+    /**
+     * 2: 埋め込むBigIntegerのlayered表現がネストしたdegreeを運べるようになった。
+     *
+     * <p>ページ自身の枠組みは変わっていないが、中身の {@link BigIntegerBufferCodec} の
+     * フォーマットが変わったので、ページ側も互換番号を上げる。
+     */
+    public static final int PROTOCOL_VERSION = 2;
     public static final int HARD_MAXIMUM_PACKET_BYTES = 1_048_576;
     public static final int HARD_MAXIMUM_PAGE_ENTRIES = 16_384;
 
@@ -73,7 +79,13 @@ public final class BigCraftingStatusPageCodec<K> {
         if (buffer.readableBytes() > HARD_MAXIMUM_PACKET_BYTES) {
             throw new IllegalArgumentException("BigInteger status packet exceeds hard byte cap");
         }
-        BigIntegerBufferCodec.requireProtocol(buffer.readVarInt());
+        // ここで確認するのはページ自身の互換番号。write側が書いているのも同じ定数。
+        int remoteProtocol = buffer.readVarInt();
+        if (remoteProtocol != PROTOCOL_VERSION) {
+            throw new IllegalStateException(
+                    "ACO status page protocol mismatch: local " + PROTOCOL_VERSION
+                            + ", remote " + remoteProtocol);
+        }
         int remoteMaximumBits = buffer.readVarInt();
         if (remoteMaximumBits < 64 || remoteMaximumBits > maximumBits) {
             throw new IllegalStateException(

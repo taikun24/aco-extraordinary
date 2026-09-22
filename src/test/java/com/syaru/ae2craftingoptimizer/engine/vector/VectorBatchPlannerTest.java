@@ -9,7 +9,7 @@ import appeng.api.stacks.AEKeyType;
 import com.syaru.ae2craftingoptimizer.engine.CompiledCraftingGraph;
 import com.syaru.ae2craftingoptimizer.engine.CompiledPattern;
 import com.syaru.ae2craftingoptimizer.engine.CompiledRootProgram;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

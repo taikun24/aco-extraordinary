@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.engine;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;

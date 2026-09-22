@@ -3,7 +3,7 @@ package com.syaru.ae2craftingoptimizer.engine;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;

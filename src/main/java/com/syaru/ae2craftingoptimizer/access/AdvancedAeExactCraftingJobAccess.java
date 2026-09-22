@@ -4,7 +4,7 @@ import appeng.api.stacks.AEItemKey;
 import appeng.api.stacks.AEKey;
 import com.syaru.ae2craftingoptimizer.engine.BigIntegerCraftingPlan;
 import com.syaru.ae2craftingoptimizer.engine.ExactCraftingJobState;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Map;
 import net.minecraft.nbt.CompoundTag;
 import org.jetbrains.annotations.Nullable;

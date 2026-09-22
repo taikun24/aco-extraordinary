@@ -14,7 +14,7 @@ import com.syaru.ae2craftingoptimizer.config.ACOConfig;
 import com.syaru.ae2craftingoptimizer.optimization.ProviderPatternGenerationTracker;
 import com.syaru.ae2craftingoptimizer.optimization.CraftingFallbackDiagnostics;
 import com.syaru.ae2craftingoptimizer.optimization.FallbackReasonCode;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;

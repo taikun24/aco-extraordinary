@@ -3,7 +3,7 @@ package com.syaru.ae2craftingoptimizer.client;
 import appeng.api.stacks.AEKey;
 import appeng.api.stacks.AmountFormat;
 import java.math.BigDecimal;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -39,10 +39,15 @@ public final class BigAmountFormatter {
     }
 
     private static String formatCompact(BigInteger amount, int amountPerUnit) {
-        BigDecimal units = new BigDecimal(amount)
+        // 層表現の数はBigDecimalへ載せられないので、OmegaNum表記(e1000000000 など)をそのまま使う。
+        if (!amount.isExact()) {
+            // 次数が深くネストした値(グラハム数など)はスロット幅に収まらないので省略表示にする。
+            return amount.toString(16);
+        }
+        BigDecimal units = amount.toBigDecimal()
                 .divide(BigDecimal.valueOf(Math.max(1, amountPerUnit)), 6, RoundingMode.DOWN)
                 .stripTrailingZeros();
-        BigInteger wholeUnits = units.toBigInteger();
+        BigInteger wholeUnits = BigInteger.of(units.toBigInteger());
         if (units.scale() <= 0 && wholeUnits.compareTo(THOUSAND) < 0) {
             return wholeUnits.toString();
         }
@@ -55,8 +60,13 @@ public final class BigAmountFormatter {
     }
 
     private static String formatFull(AEKey key, BigInteger amount) {
+        if (!amount.isExact()) {
+            String unit = key.getUnitSymbol();
+            String text = amount.toString(64);
+            return unit == null ? text : text + " " + unit;
+        }
         int amountPerUnit = Math.max(1, key.getAmountPerUnit());
-        BigDecimal units = new BigDecimal(amount)
+        BigDecimal units = amount.toBigDecimal()
                 .divide(BigDecimal.valueOf(amountPerUnit), 3, RoundingMode.DOWN)
                 .stripTrailingZeros();
 

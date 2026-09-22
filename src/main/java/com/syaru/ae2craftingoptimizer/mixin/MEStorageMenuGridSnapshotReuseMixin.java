@@ -3,6 +3,7 @@ package com.syaru.ae2craftingoptimizer.mixin;
 import appeng.api.stacks.KeyCounter;
 import appeng.api.storage.MEStorage;
 import appeng.menu.me.common.MEStorageMenu;
+import com.syaru.ae2craftingoptimizer.integration.ExactGridAmountSync;
 import com.syaru.ae2craftingoptimizer.integration.GridStorageSnapshotBridge;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,8 +26,11 @@ public abstract class MEStorageMenuGridSnapshotReuseMixin {
     private KeyCounter aco$reuseAuthoritativeGridSnapshot(
             MEStorage menuStorage) {
         MEStorageMenu menu = (MEStorageMenu) (Object) this;
-        return GridStorageSnapshotBridge.availableStacks(
+        KeyCounter snapshot = GridStorageSnapshotBridge.availableStacks(
                 menuStorage,
                 menu.getGridNode());
+        // Snapshotを取り直さずに、この同じCounterのSidecarから端末表示用の差分を送る。
+        ExactGridAmountSync.observe(menu, snapshot);
+        return snapshot;
     }
 }

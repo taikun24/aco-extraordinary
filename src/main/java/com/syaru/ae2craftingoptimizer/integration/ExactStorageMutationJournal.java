@@ -1,7 +1,7 @@
 package com.syaru.ae2craftingoptimizer.integration;
 
 import com.syaru.ae2craftingoptimizer.AE2CraftingOptimizer;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;

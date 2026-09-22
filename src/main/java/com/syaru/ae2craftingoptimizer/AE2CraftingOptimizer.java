@@ -10,6 +10,7 @@ import com.syaru.ae2craftingoptimizer.command.ACOIntentCommands;
 import com.syaru.ae2craftingoptimizer.config.ACOConfig;
 import com.syaru.ae2craftingoptimizer.lifecycle.ACOServerLifecycle;
 import com.syaru.ae2craftingoptimizer.network.BigCraftingNetwork;
+import com.syaru.ae2craftingoptimizer.testing.ACOTestContent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.bus.api.IEventBus;
@@ -36,11 +37,13 @@ public final class AE2CraftingOptimizer {
         PatternBatchV2Api.registerBuiltIns();
         modBus.addListener(BigCraftingNetwork::register);
         modBus.addListener(this::commonSetup);
+        ACOTestContent.register(modBus);
         NeoForge.EVENT_BUS.addListener(this::onRegisterCommands);
         ACOServerLifecycle.register();
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
+        ACOTestContent.registerCellHandler();
         IntegrationCapabilities capabilities = IntegrationCapabilities.forAco(ExactCountLimits.defaults());
         IntegrationCapabilitiesRegistry.initializeOnce(capabilities);
         LOGGER.info("{} initialized", MOD_NAME);

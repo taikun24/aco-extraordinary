@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.engine.vector;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Objects;
 
 /**

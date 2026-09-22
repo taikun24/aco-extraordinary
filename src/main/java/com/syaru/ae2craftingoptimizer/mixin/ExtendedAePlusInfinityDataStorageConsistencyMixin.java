@@ -3,7 +3,7 @@ package com.syaru.ae2craftingoptimizer.mixin;
 import appeng.api.stacks.AEKey;
 import com.syaru.ae2craftingoptimizer.integration.ExactBigIntegerCellConsistency;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;

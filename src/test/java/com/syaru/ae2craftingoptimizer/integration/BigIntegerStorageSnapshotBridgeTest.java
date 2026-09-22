@@ -13,7 +13,7 @@ import com.syaru.ae2craftingoptimizer.access.DelegatingMEInventoryAccess;
 import com.syaru.ae2craftingoptimizer.access.ExtendedAePlusBigIntegerCellInventoryAccess;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;

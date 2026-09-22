@@ -11,7 +11,7 @@ import com.syaru.ae2craftingoptimizer.intent.RecipeIntentRegistry;
 import com.syaru.ae2craftingoptimizer.mekanism.MekanismRecipeIntentFastPath;
 import com.syaru.ae2craftingoptimizer.optimization.OptimizationMetrics;
 import java.util.List;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.Commands;

@@ -1,3 +1,11 @@
+# ACO-Extraordinary
+
+BigIntだけではなく指数的な数字も扱えるようになったAE2 Crafting Optimizerのフォークです。
+
+今の所クリエティブセルのみです。
+
+ジョークmodなのでmodpackとかには入れないでね
+
 # AE2 Crafting Optimizer
 
 <p align="center">

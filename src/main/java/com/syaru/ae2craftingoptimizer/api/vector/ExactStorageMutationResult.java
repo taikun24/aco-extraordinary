@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.api.vector;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Objects;
 
 /** 一AEKeyの正確在庫操作結果。失敗時に状態を推測せず隔離できる情報を返す。 */

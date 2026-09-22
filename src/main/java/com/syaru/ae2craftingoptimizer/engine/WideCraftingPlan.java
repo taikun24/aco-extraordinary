@@ -1,7 +1,7 @@
 package com.syaru.ae2craftingoptimizer.engine;
 
 import appeng.api.networking.crafting.ICraftingPlan;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 
 /**
  * AE2のsigned long APIだけでは表現できない真値を持つACO内部計画。

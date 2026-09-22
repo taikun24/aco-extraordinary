@@ -8,7 +8,7 @@ import com.syaru.ae2craftingoptimizer.access.DelegatingMEInventoryAccess;
 import com.syaru.ae2craftingoptimizer.access.ExtendedAePlusBigIntegerCellInventoryAccess;
 import com.syaru.ae2craftingoptimizer.config.ACOConfig;
 import com.syaru.ae2craftingoptimizer.engine.BigKeyCounterSidecars;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayDeque;
 import java.util.LinkedHashMap;
 import java.util.Map;

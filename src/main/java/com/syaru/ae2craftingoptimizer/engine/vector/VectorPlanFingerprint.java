@@ -2,7 +2,7 @@ package com.syaru.ae2craftingoptimizer.engine.vector;
 
 import com.syaru.ae2craftingoptimizer.api.vector.ExactStack;
 import com.syaru.ae2craftingoptimizer.util.StableFingerprint;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.List;
 import java.util.Objects;
 

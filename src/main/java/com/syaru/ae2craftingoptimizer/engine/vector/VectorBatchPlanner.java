@@ -7,7 +7,7 @@ import com.syaru.ae2craftingoptimizer.api.vector.ExactCraftingStep;
 import com.syaru.ae2craftingoptimizer.api.vector.PreparedVectorBatch;
 import com.syaru.ae2craftingoptimizer.api.vector.VectorResourceMode;
 import com.syaru.ae2craftingoptimizer.engine.CompiledRootProgram;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;

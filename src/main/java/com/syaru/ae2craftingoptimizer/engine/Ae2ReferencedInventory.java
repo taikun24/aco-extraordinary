@@ -6,7 +6,7 @@ import appeng.api.networking.security.IActionSource;
 import appeng.api.stacks.AEKey;
 import appeng.api.stacks.KeyCounter;
 import com.syaru.ae2craftingoptimizer.config.ACOConfig;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Objects;
 import org.jetbrains.annotations.Nullable;
 

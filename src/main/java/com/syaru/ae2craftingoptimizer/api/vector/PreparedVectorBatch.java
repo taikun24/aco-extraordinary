@@ -1,7 +1,7 @@
 package com.syaru.ae2craftingoptimizer.api.vector;
 
 import appeng.api.stacks.AEKey;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Objects;

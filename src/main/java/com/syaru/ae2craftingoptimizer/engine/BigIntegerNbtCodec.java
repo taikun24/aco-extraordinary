@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.engine;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Arrays;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;

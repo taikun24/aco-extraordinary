@@ -2,7 +2,7 @@ package com.syaru.ae2craftingoptimizer.integration;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;

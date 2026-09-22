@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.engine.craftingtable;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;

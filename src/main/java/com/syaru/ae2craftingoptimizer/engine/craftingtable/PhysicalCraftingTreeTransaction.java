@@ -22,7 +22,7 @@ import com.syaru.ae2craftingoptimizer.api.vector.PreparedVectorBatchCodec;
 import com.syaru.ae2craftingoptimizer.engine.Ae2CompiledCraftingGraphCache;
 import com.syaru.ae2craftingoptimizer.scheduler.PatternProviderRoutingCache;
 import com.syaru.ae2craftingoptimizer.util.StableFingerprint;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;

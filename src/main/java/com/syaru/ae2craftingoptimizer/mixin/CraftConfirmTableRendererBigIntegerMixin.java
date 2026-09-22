@@ -9,7 +9,7 @@ import appeng.menu.me.crafting.CraftingPlanSummaryEntry;
 import com.syaru.ae2craftingoptimizer.client.BigAmountFormatter;
 import com.syaru.ae2craftingoptimizer.client.BigCraftingPlanClientStore;
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingPlanSummary;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.network.chat.Component;

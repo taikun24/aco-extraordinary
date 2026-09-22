@@ -15,7 +15,7 @@ import com.syaru.ae2craftingoptimizer.api.vector.ExactVectorStoragePolicy;
 import com.syaru.ae2craftingoptimizer.config.ACOConfig;
 import com.syaru.ae2craftingoptimizer.lifecycle.ACORegistryAccess;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.IdentityHashMap;

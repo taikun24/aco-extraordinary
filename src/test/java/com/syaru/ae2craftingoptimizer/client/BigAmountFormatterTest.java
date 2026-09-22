@@ -2,7 +2,7 @@ package com.syaru.ae2craftingoptimizer.client;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import org.junit.jupiter.api.Test;
 
 class BigAmountFormatterTest {

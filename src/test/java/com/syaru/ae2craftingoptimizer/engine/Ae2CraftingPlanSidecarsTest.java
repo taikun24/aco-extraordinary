@@ -84,8 +84,8 @@ class Ae2CraftingPlanSidecarsTest {
         }
 
         @Override
-        public java.math.BigInteger exactBytes() {
-            return java.math.BigInteger.valueOf(Long.MAX_VALUE).add(java.math.BigInteger.ONE);
+        public javaa.maath.BigInteger exactBytes() {
+            return javaa.maath.BigInteger.valueOf(Long.MAX_VALUE).add(javaa.maath.BigInteger.ONE);
         }
 
         @Override
