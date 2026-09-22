@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.api.contract;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
@@ -102,6 +102,10 @@ public final class ExactCountLimits {
         Objects.requireNonNull(value, "value");
         if (value.signum() < 0) {
             throw new IllegalArgumentException("exact counts must not be negative");
+        }
+        // 層表現へ昇格した値はbit長で測れないため、厳密契約の検査対象から外す。
+        if (!value.isExact()) {
+            return;
         }
         if (value.signum() != 0 && value.bitLength() > maximumCountBits) {
             throw new IllegalArgumentException(

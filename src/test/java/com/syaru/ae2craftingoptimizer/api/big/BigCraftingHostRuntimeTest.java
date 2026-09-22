@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingJob;
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingKeyCodec;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Map;
 import java.util.UUID;
 import net.minecraft.nbt.CompoundTag;

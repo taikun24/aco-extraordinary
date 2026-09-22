@@ -3,7 +3,7 @@ package com.syaru.ae2craftingoptimizer.integration;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.junit.jupiter.api.AfterEach;

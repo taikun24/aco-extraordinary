@@ -35,6 +35,7 @@
     "CraftAmountScreenLongAmountMixin",
     "CraftConfirmScreenBigIntegerMixin",
     "CraftConfirmTableRendererBigIntegerMixin",
+    "MEStorageScreenExactAmountMixin",
     "NumberEntryWidgetAccessor"
   ],
   "injectors": {

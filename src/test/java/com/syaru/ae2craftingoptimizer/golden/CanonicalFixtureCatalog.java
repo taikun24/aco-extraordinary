@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.golden;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;

@@ -7,7 +7,7 @@ import appeng.api.stacks.KeyCounter;
 import appeng.blockentity.crafting.IMolecularAssemblerSupportedPattern;
 import com.syaru.ae2craftingoptimizer.api.vector.ExactCraftingInputSlot;
 import com.syaru.ae2craftingoptimizer.api.vector.ExactStack;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;

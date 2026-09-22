@@ -1,3 +1,11 @@
+# ACO-Extraordinary
+
+Now it can handle not only BigInteger but also Exponential crafting amounts like graham number.
+
+Currently, only Creative Cells are implemented.
+
+JOKE MOD!!!! DO NOT INCLUDE THIS INTO YOUR PRODUCTION MODPACK
+
 # AE2 Crafting Optimizer
 
 <p align="center">

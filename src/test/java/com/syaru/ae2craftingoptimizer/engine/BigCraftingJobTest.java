@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Map;
 import java.util.UUID;
 import net.minecraft.nbt.CompoundTag;

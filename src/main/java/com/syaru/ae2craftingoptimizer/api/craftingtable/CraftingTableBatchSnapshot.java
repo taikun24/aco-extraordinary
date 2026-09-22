@@ -1,7 +1,7 @@
 package com.syaru.ae2craftingoptimizer.api.craftingtable;
 
 import appeng.api.stacks.AEKey;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;

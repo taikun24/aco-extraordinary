@@ -7,7 +7,7 @@ import appeng.menu.me.crafting.CraftingPlanSummary;
 import appeng.menu.me.crafting.CraftingPlanSummaryEntry;
 import com.syaru.ae2craftingoptimizer.config.ACOConfig;
 import it.unimi.dsi.fastutil.objects.Object2LongMap;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;

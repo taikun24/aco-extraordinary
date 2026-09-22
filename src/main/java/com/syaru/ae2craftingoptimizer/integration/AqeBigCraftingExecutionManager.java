@@ -42,7 +42,7 @@ import com.syaru.ae2craftingoptimizer.engine.vector.VectorBatchPlanner;
 import com.syaru.ae2craftingoptimizer.optimization.ProviderPatternGenerationTracker;
 import com.syaru.ae2craftingoptimizer.optimization.ServerTickClock;
 import com.syaru.ae2craftingoptimizer.scheduler.PatternProviderRoutingCache;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;

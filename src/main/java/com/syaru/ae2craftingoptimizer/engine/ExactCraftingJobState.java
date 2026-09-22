@@ -2,7 +2,7 @@ package com.syaru.ae2craftingoptimizer.engine;
 
 import appeng.api.stacks.AEItemKey;
 import appeng.api.stacks.AEKey;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;

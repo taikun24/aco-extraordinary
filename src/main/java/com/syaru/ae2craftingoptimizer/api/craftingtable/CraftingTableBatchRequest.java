@@ -5,7 +5,7 @@ import appeng.api.stacks.AEKey;
 import appeng.api.stacks.GenericStack;
 import appeng.api.stacks.KeyCounter;
 import com.syaru.ae2craftingoptimizer.api.vector.ExactStack;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;

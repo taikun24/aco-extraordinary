@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.engine;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Map;
 import java.util.Objects;
 
@@ -16,8 +16,19 @@ public final class BigCountMath {
     private BigCountMath() {
     }
 
+    /**
+     * 層表現(OmegaNum)へ昇格した値の符号化サイズ。
+     *
+     * <p>sign + 数個のdoubleしか持たないので、桁数に関係なく定数扱いでよい。
+     */
+    public static final long LAYERED_ENCODED_BYTES = 32L;
+
     /** Exact byte length of BigInteger's signed two's-complement encoding without allocating it. */
     public static long encodedBytes(BigInteger value) {
+        // 厳密値を捨てた数はタワーとして保存するため、桁数ではなく固定サイズで数える。
+        if (!value.isExact()) {
+            return LAYERED_ENCODED_BYTES;
+        }
         requireMaximumBits(value, "encoded value", HARD_MAXIMUM_BITS);
         return ((long) value.bitLength() + 8L) / 8L;
     }
@@ -36,6 +47,13 @@ public final class BigCountMath {
             String context,
             int maximumBits) {
         requireNonNegative(value, context);
+        /*
+         * 厳密領域を出た数(10^10億など)は桁数の上限で測れない。
+         * この実装上限は「厳密に数え上げる」ためのものなので、層表現の値には適用しない。
+         */
+        if (!value.isExact()) {
+            return value;
+        }
         // 呼出側が実装上限を越える設定値を渡した場合は、値の検査前に拒否する。
         if (maximumBits < 1 || maximumBits > HARD_MAXIMUM_BITS) {
             throw new IllegalArgumentException(

@@ -6,7 +6,7 @@ import appeng.api.stacks.KeyCounter;
 import appeng.crafting.inv.ListCraftingInventory;
 import com.syaru.ae2craftingoptimizer.access.ExactCraftingInventoryAccess;
 import com.syaru.ae2craftingoptimizer.engine.ExactCraftingJobLedger;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;

@@ -1,7 +1,7 @@
 package com.syaru.ae2craftingoptimizer.access;
 
 import appeng.api.stacks.AEKey;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Map;
 
 /**

@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.golden;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

@@ -6,7 +6,7 @@ import appeng.api.stacks.AEKey;
 import com.syaru.ae2craftingoptimizer.config.ACOConfig;
 import com.syaru.ae2craftingoptimizer.optimization.ProviderPatternGenerationTracker;
 import com.syaru.ae2craftingoptimizer.util.StableFingerprint;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

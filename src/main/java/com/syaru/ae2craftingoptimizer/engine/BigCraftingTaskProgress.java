@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.engine;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 
 public final class BigCraftingTaskProgress {
     private final BigInteger total;

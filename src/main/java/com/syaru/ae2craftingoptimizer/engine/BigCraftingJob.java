@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.engine;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import java.util.Map;

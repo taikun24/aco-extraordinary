@@ -2,7 +2,7 @@ package com.syaru.ae2craftingoptimizer.integration;
 
 import appeng.api.stacks.AEKey;
 import com.syaru.ae2craftingoptimizer.api.big.BigCraftingHostRuntime;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.UUID;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.BlockPos;

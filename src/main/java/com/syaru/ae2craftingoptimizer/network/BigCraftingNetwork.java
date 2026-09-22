@@ -8,6 +8,7 @@ import com.syaru.ae2craftingoptimizer.api.big.BigCraftingStatusInbox;
 import com.syaru.ae2craftingoptimizer.api.big.BigCraftingStatusPage;
 import com.syaru.ae2craftingoptimizer.api.big.BigCraftingStatusPageCodec;
 import com.syaru.ae2craftingoptimizer.client.BigCraftingPlanClientStore;
+import com.syaru.ae2craftingoptimizer.client.ExactGridAmountClientStore;
 import com.syaru.ae2craftingoptimizer.client.LongCraftAmountClientHandler;
 import com.syaru.ae2craftingoptimizer.config.ACOConfig;
 import com.syaru.ae2craftingoptimizer.craftingamount.LongCraftAmountMenuBridge;
@@ -15,7 +16,7 @@ import com.syaru.ae2craftingoptimizer.craftingamount.LongCraftAmountRules;
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingPlanSummary;
 import com.syaru.ae2craftingoptimizer.engine.BigIntegerBufferCodec;
 import io.netty.buffer.Unpooled;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -35,8 +36,8 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
  * AE2本来のPayload IDやCodecは変更せず、ACO同士だけがこの追加Protocolを使用する。
  */
 public final class BigCraftingNetwork {
-    /** Craft確認画面のBigInteger Summaryを含むACO通信互換番号。 */
-    public static final String PROTOCOL = "4";
+    /** 巨大次数(ネストしたdegree)を運べるlayered表現を含むACO通信互換番号。 */
+    public static final String PROTOCOL = "6";
     private static final AtomicBoolean REGISTERED = new AtomicBoolean();
 
     private BigCraftingNetwork() {
@@ -65,6 +66,28 @@ public final class BigCraftingNetwork {
                 ExactCraftingPlanSummaryMessage.TYPE,
                 ExactCraftingPlanSummaryMessage.STREAM_CODEC,
                 ExactCraftingPlanSummaryMessage::handle);
+        registrar.playToClient(
+                ExactGridAmountsMessage.TYPE,
+                ExactGridAmountsMessage.STREAM_CODEC,
+                ExactGridAmountsMessage::handle);
+    }
+
+    /**
+     * ME端末グリッドのうち、AE2のlong Payloadと食い違うキーの正確量だけを送る。
+     *
+     * <p>空Mapは「long表示へ戻す」指示として意味があるので、そのまま送信する。
+     */
+    public static void sendExactGridAmounts(
+            ServerPlayer player,
+            int containerId,
+            Map<AEKey, BigInteger> amounts) {
+        int maximumEntries = ACOConfig.getBigIntegerStatusPageEntries();
+        if (amounts.size() > maximumEntries) {
+            throw new IllegalArgumentException(
+                    "Terminal grid has " + amounts.size()
+                            + " exact rows, above configured packet cap " + maximumEntries);
+        }
+        PacketDistributor.sendToPlayer(player, new ExactGridAmountsMessage(containerId, amounts));
     }
 
     public static void send(ServerPlayer player, BigCraftingStatusPage<AEKey> page) {
@@ -379,6 +402,75 @@ public final class BigCraftingNetwork {
                 return;
             }
             BigCraftingPlanClientStore.clear(message.containerId());
+        }
+    }
+
+    /** AE2本来のGrid Payloadへ、long表示と食い違うキーの正確量だけを補うS2C Payload。 */
+    private record ExactGridAmountsMessage(
+            int containerId,
+            Map<AEKey, BigInteger> amounts)
+            implements CustomPacketPayload {
+        private static final Type<ExactGridAmountsMessage> TYPE =
+                BigCraftingNetwork.type("exact_grid_amounts");
+        private static final StreamCodec<RegistryFriendlyByteBuf, ExactGridAmountsMessage> STREAM_CODEC =
+                StreamCodec.ofMember(
+                        ExactGridAmountsMessage::write,
+                        ExactGridAmountsMessage::decode);
+
+        private ExactGridAmountsMessage {
+            if (containerId < 0) {
+                throw new IllegalArgumentException("containerId must be non-negative");
+            }
+            amounts = Map.copyOf(new LinkedHashMap<>(
+                    java.util.Objects.requireNonNull(amounts, "amounts")));
+        }
+
+        @Override
+        public Type<ExactGridAmountsMessage> type() {
+            return TYPE;
+        }
+
+        private void write(RegistryFriendlyByteBuf buffer) {
+            int maximumBits = ACOConfig.getBigIntegerMaximumBits();
+            buffer.writeVarInt(containerId);
+            buffer.writeVarInt(amounts.size());
+            amounts.forEach((key, amount) -> {
+                AeKeyBigCraftingPacketCodec.INSTANCE.write(buffer, key);
+                BigIntegerBufferCodec.writeNonNegative(buffer, amount, maximumBits);
+            });
+        }
+
+        private static ExactGridAmountsMessage decode(RegistryFriendlyByteBuf buffer) {
+            int containerId = buffer.readVarInt();
+            int entryCount = buffer.readVarInt();
+            int maximumEntries = ACOConfig.getBigIntegerStatusPageEntries();
+            if (entryCount < 0 || entryCount > maximumEntries) {
+                throw new IllegalArgumentException(
+                        "invalid exact grid amount count " + entryCount);
+            }
+
+            int maximumBits = ACOConfig.getBigIntegerMaximumBits();
+            Map<AEKey, BigInteger> amounts = new LinkedHashMap<>(entryCount);
+            for (int index = 0; index < entryCount; index++) {
+                AEKey key = AeKeyBigCraftingPacketCodec.INSTANCE.read(buffer);
+                if (key == null) {
+                    throw new IllegalArgumentException("unknown AEKey in exact grid amounts");
+                }
+                if (amounts.put(key, BigIntegerBufferCodec.readNonNegative(buffer, maximumBits))
+                        != null) {
+                    throw new IllegalArgumentException(
+                            "duplicate AEKey in exact grid amounts: " + key.getId());
+                }
+            }
+            return new ExactGridAmountsMessage(containerId, amounts);
+        }
+
+        private static void handle(ExactGridAmountsMessage message, IPayloadContext context) {
+            if (message.amounts().isEmpty()) {
+                ExactGridAmountClientStore.clear(message.containerId());
+                return;
+            }
+            ExactGridAmountClientStore.accept(message.containerId(), message.amounts());
         }
     }
 

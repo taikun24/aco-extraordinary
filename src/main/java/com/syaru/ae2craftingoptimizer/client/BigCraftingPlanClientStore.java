@@ -3,7 +3,7 @@ package com.syaru.ae2craftingoptimizer.client;
 import appeng.api.stacks.AEKey;
 import appeng.menu.me.crafting.CraftConfirmMenu;
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingPlanSummary;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;

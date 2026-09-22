@@ -35,7 +35,7 @@ import com.syaru.ae2craftingoptimizer.config.ACOConfig;
 import com.syaru.ae2craftingoptimizer.transaction.BatchTransactionCoordinator;
 import com.syaru.ae2craftingoptimizer.transaction.BatchTransactionRecord;
 import com.syaru.ae2craftingoptimizer.scheduler.PatternProviderRoutingCache;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

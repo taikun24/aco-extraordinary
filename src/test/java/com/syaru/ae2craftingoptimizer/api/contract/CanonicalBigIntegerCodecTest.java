@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import net.minecraft.nbt.CompoundTag;
 import org.junit.jupiter.api.Test;
 

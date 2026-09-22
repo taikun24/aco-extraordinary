@@ -1,7 +1,7 @@
 package com.syaru.ae2craftingoptimizer.api.big;
 
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingJob;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;

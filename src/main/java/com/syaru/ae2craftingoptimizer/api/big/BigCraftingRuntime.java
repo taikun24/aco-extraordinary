@@ -4,7 +4,7 @@ import com.syaru.ae2craftingoptimizer.engine.BigCountMath;
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingCpuLedger;
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingJob;
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingKeyCodec;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;

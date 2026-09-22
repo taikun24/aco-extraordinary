@@ -1,6 +1,6 @@
 package com.syaru.ae2craftingoptimizer.integration;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Objects;
 import java.util.function.Supplier;
 

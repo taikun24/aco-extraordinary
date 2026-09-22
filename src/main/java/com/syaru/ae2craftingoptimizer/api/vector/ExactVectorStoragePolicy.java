@@ -1,7 +1,7 @@
 package com.syaru.ae2craftingoptimizer.api.vector;
 
 import appeng.api.stacks.AEKey;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 
 /**
  * Infinity BigInteger Cellの派生実装が、ACOの直接BigInteger挿入へ追加制約を伝える契約。

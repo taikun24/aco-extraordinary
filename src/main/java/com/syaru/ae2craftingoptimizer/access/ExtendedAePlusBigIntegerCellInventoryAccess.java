@@ -2,7 +2,7 @@ package com.syaru.ae2craftingoptimizer.access;
 
 import appeng.api.stacks.AEKey;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.UUID;
 
 /** ExtendedAE PlusのBigIntegerセルへ安全に接続する、Mixinではない内部契約。 */

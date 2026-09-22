@@ -19,7 +19,7 @@ import com.syaru.ae2craftingoptimizer.engine.BigCapacityCraftingPlan;
 import com.syaru.ae2craftingoptimizer.engine.BigIntegerCraftingPlan;
 import com.syaru.ae2craftingoptimizer.engine.WidePlanSubmissionGuard;
 import com.syaru.ae2craftingoptimizer.integration.AqeBigCraftingExecutionContext;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;

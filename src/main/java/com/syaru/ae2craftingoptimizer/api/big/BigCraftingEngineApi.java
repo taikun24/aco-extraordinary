@@ -3,7 +3,7 @@ package com.syaru.ae2craftingoptimizer.api.big;
 import com.syaru.ae2craftingoptimizer.config.ACOConfig;
 import com.syaru.ae2craftingoptimizer.engine.BigCraftingKeyCodec;
 import com.syaru.ae2craftingoptimizer.engine.OverflowPromotingCraftingPlanner;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Objects;
 import appeng.api.stacks.AEKey;
 import com.syaru.ae2craftingoptimizer.network.BigCraftingNetwork;

@@ -19,3 +19,5 @@ out/
 
 Thumbs.db
 .DS_Store
+
+.local-mods/

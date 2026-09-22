@@ -2,7 +2,7 @@ package com.syaru.ae2craftingoptimizer.engine.vector;
 
 import com.syaru.ae2craftingoptimizer.api.vector.ExactStack;
 import com.syaru.ae2craftingoptimizer.api.vector.PreparedVectorBatch;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Objects;
 
 /** Config上限とBigInteger桁数を、Executor選択より前に一か所で検査する。 */

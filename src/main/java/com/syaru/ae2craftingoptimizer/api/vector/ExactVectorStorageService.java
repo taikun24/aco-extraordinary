@@ -4,7 +4,7 @@ import appeng.api.networking.IGrid;
 import appeng.api.networking.security.IActionSource;
 import appeng.api.stacks.AEKey;
 import com.syaru.ae2craftingoptimizer.integration.ExactNetworkStorageBridge;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;

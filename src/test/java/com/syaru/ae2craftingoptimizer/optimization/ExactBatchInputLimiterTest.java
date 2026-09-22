@@ -2,7 +2,7 @@ package com.syaru.ae2craftingoptimizer.optimization;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 

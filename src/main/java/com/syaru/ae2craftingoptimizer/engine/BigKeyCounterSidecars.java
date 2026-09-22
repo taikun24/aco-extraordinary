@@ -4,7 +4,7 @@ import appeng.api.stacks.AEKey;
 import appeng.api.stacks.KeyCounter;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
-import java.math.BigInteger;
+import javaa.maath.BigInteger;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
